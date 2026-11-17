@@ -1,11 +1,135 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import '../styles/main.scss';
+import cvImage from '../assets/cv.png';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = "Tomi Salo – Oman median asiantuntija | Hakemus Julkee x Lempee";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="fi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title}</title>
+		<meta
+			name="description"
+			content="Työhakemus Oman median asiantuntijan tehtävään (Julkee x Lempee). Rakennettu suoraan Astrolla."
+		/>
+		<meta name="robots" content="noindex" />
+	</head>
+	<body>
+		<a href="#sisalto" class="skip-link">Siirry suoraan sisältöön</a>
+
+		<nav class="site-nav" aria-label="Päävalikko">
+			<div class="container nav-inner">
+				<ul class="nav-links">
+					<li><a href="#yhteys" class="nav-cta">Sovitaan tapaaminen Katajanokalle</a></li>
+					<li><a href="#cv-palapeli">Kokoa CV</a></li>
+					<li><a href="#miksi-mina">Miksi juuri minä?</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<header class="hero">
+			<div class="container">
+				<span class="badge">Rekry · Oman median asiantuntija</span>
+				<h1>WordPressin ylläpito on takana ja moderni web edessä.</h1>
+				<p class="lead">
+					Hei Julkee x Lempee! Olen <strong>Tomi Salo</strong> – yli 7 vuoden toimistokokemuksella varustettu web-tekijä, joka on rakentanut kymmeniä räätälöityjä sivustoja ja tietää täsmälleen, miksi asiakkaanne haluavat eroon raskaista plugin-härveleistä.
+				</p>
+			</div>
+		</header>
+
+		<main id="sisalto">
+			<section id="miksi-mina" class="section">
+				<div class="container">
+					<h2>Mitä tuon pöytään?</h2>
+					<div class="grid">
+						<article class="card">
+							<h3>Syvä WordPress-tausta on valttinne</h3>
+							<p>
+								Olen rakentanut vuodesta 2018 alkaen räätälöityjä WordPress-sivustoja ilman raskaita sivunrakentajia ja hoitanut niiden tietoturvaa. Tunnen kipupisteet läpikotaisin – osaan neuvoa asiakasta uskottavasti siirtymässä staattisiin ja huoltovapaisiin ratkaisuihin.
+							</p>
+						</article>
+
+						<article class="card">
+							<h3>Tekijä, joka kantaa vastuun maaliin</h3>
+							<p>
+								Olen toiminut teknisenä vetäjänä (Lead) ja vastannut projekteista alusta loppuun tiiviissä asiakasyhteistyössä. Pidän langat käsissä, viestin suoraan ja tuon pöytään ratkaisuja enkä vain toteuta tikettejä.
+							</p>
+						</article>
+
+						<article class="card">
+							<h3>Saavutettavuus ja tekninen laatu</h3>
+							<p>
+								WCAG-saavutettavuusosaaminen, puhdas semanttinen koodi ja tekninen hakukoneoptimointi kulkevat minulla selkärangassa. Kun pohja on kunnossa, sekä ihmiset että tekoälyhakukoneet löytävät perille.
+							</p>
+						</article>
+
+						<article class="card">
+							<h3>Utelias oppimaan uutta</h3>
+							<p>
+								Innostun uusista työkaluista kokeilemalla niitä käytännössä. Tämäkin hakemussivu on pystytetty puhtaalta pöydältä Astrolla ja SCSS:llä juuri tätä hakua varten. Modernit tekoälyavusteiset työkalut, markkinoinnin automaatiot ja CRM-kytkennät ovat juuri se suunta, johon haluan osaamistani seuraavaksi viedä.
+							</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section class="section alt-bg">
+				<div class="container">
+					<h2>Tekninen työkalupakki</h2>
+					<ul class="tags" aria-label="Osaamisalueet">
+						<li>HTML5 &amp; Semantiikka</li>
+						<li>CSS3 / SCSS</li>
+						<li>JavaScript &amp; React</li>
+						<li>Astro</li>
+						<li>Git &amp; Versionhallinta</li>
+						<li>WCAG-saavutettavuus</li>
+						<li>Tekninen SEO</li>
+						<li>WordPress-migraatiot</li>
+						<li>Projektinhallinta &amp; Asiakasneuvonanto</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- UUSI PALAPELIOSIO -->
+			<section id="cv-palapeli" class="section">
+				<div class="container">
+					<h2>Kokoa palapeli ja paljasta CV:ni</h2>
+					<p>Raahaa paloja toistensa päälle vaihtaaksesi niiden paikkoja.</p>
+					
+					<div class="puzzle-wrapper">
+						<div id="puzzle-board" class="puzzle-board" data-image={cvImage.src}></div>
+						<div id="puzzle-status" class="puzzle-status" aria-live="polite"></div>
+						<button id="shuffle-btn" type="button" class="btn-secondary">Sekoita uudelleen</button>
+					</div>
+				</div>
+			</section>
+
+			<section id="yhteys" class="section contact">
+				<div class="container">
+					<h2>Jutellaanko lisää?</h2>
+					<p>
+						Kerron mielelläni tarkemmin aiemmista projekteistani ja siitä, miten voisin auttaa tiimiänne rakentamaan entistä nopeampia verkkosivuja ja toimivia markkinointijärjestelmiä.
+					</p>
+					<div class="contact-box">
+						<p><strong>Tomi Salo</strong></p>
+						<p>Tarkemmat yhteystietoni (sähköposti ja puhelinnumero) löytyvät lähettämästäni hakemusviestistä.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="container">
+				<p>Rakennettu Astrolla &middot; Ei yhtäkään päivittämistä vaativaa lisäosaa.</p>
+			</div>
+		</footer>
+		
+		<script>
+			import '../scripts/dragdrop.js';
+		</script>
+	</body>
+</html>
+
